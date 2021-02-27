@@ -1,0 +1,55 @@
+.displayTable-g {
+  min-height: 80vh;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 9rem;
+
+
+}
+
+.displayTableCell-g {
+  border: 1px solid black;
+  height: 100%;
+  padding: 2rem 8rem 8rem 8rem;
+  border-radius: 2rem;
+}
+
+.authBlock-g h3 {
+  margin-bottom: 2rem;
+  padding-top: 0;
+}
+
+.formGroup-mine-g {
+  margin-bottom: 1rem;
+}
+.formGroup-g {
+  margin-bottom: 1rem;
+}
+
+.formGroup-mine-g input{
+  height: 4rem;
+  padding: 1rem;
+}
+.formGroup-g input{
+  height: 4rem;
+  padding: 1rem;
+}
+
+.btn-g {
+  border-style: none;
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  background-color: #d47c6a;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease-in;
+}
+
+.redirect-g {
+  font-weight: bold;
+  cursor: pointer;
+}

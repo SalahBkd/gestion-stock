@@ -1,0 +1,24 @@
+<div class="displayTable-g">
+  <div class="displayTableCell-g">
+
+    <div class="authBlock-g">
+      <h3>S'identifier</h3>
+      <div class="formGroup-mine-g">
+        <input type="text" class="formControl-g" placeholder="Email" #email required>
+      </div>
+
+      <div class="formGroup-g">
+        <input type="password" class="formControl-g" placeholder="Mot De Passe" #userPassword required>
+      </div>
+
+      <!-- Call SignIn Api from AuthService -->
+      <div class="formGroup-g">
+        <input type="button" class="btn-g" value="S'identifier">
+      </div>
+    </div>
+
+    <div class="redirectToLogin-g">
+      <span>Vous n'avez pas de compte? <span class="redirect-g" routerLink="/register-user"> S'inscrire</span></span>
+    </div>
+  </div>
+</div>

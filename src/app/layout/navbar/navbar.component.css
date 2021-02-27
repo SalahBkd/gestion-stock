@@ -1,0 +1,39 @@
+header {
+  background-color: #d47c6a;
+}
+
+.logo {
+  font-family: 'Fraunces', serif;
+  cursor: pointer;
+  color: white;
+}
+
+nav {
+  width: 90%;
+  margin: auto;
+  min-height: 10vh;
+  padding: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-wrap: wrap;
+}
+
+nav h1 {
+  flex: 1 1 40rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  flex: 1 1 40rem;
+}
+
+nav ul li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+}

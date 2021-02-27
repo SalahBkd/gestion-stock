@@ -1,0 +1,3 @@
+- data should be stored in firestore
+- pagination, sorting
+- deployement
