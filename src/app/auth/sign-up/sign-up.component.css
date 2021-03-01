@@ -12,7 +12,8 @@
 
 .displayTableCell-g {
   border: 1px solid black;
-  height: 100%;
+  margin: 0;
+  height: 50rem;
   padding: 2rem 8rem 8rem 8rem;
   border-radius: 2rem;
 }

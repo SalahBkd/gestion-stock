@@ -29,7 +29,7 @@ export class AuthServiceService {
 
   logout() {
     localStorage.removeItem(this.storageKey);
-    this.router.navigate([`${this.BASE_URL}/auth/register-responsable`]);
+    this.router.navigate(['sign-in']);
 
   }
 
@@ -49,11 +49,9 @@ export class AuthServiceService {
       );
   }
 
-  // TEST HOMEPAGE ACCESS WITH TOKEN HEADER
+  // TEST AUTHORIZATION TO HOMEPAGE ACCESS WITH TOKEN HEADER
   accessHome() {
     let tokenStr = 'Bearer ' + this.getToken();
-    console.log(this.getToken())
-    console.log(tokenStr);
     const headers = new HttpHeaders().set("Authorization", tokenStr);
     return this.http.get<any>(`${this.BASE_URL}/auth/home`, {headers})
       .pipe(
