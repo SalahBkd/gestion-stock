@@ -13,6 +13,8 @@ import {DatePipe} from "@angular/common";
 import {ChartsModule} from "ng2-charts";
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {AuthServiceService} from "./shared/auth-service.service";
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     NotFoundComponent,
     SignInComponent,
     SignUpComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     routing,
     ChartsModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, AuthServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

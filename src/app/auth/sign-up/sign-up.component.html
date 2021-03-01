@@ -5,7 +5,7 @@
       <h3>S'inscrire</h3>
 
       <div class="formGroup-g">
-        <input type="email" class="formControl-g" placeholder="Email" #userEmail required>
+        <input type="text" class="formControl-g" placeholder="Username" #userName required>
       </div>
 
       <div class="formGroup-g">
@@ -13,7 +13,25 @@
       </div>
 
       <div class="formGroup-g">
-        <input type="button" class="btn-g" value="S'inscrire">
+        <input type="email" class="formControl-g" placeholder="Email" #email required>
+      </div>
+
+      <div class="formGroup-g">
+        <input type="text" class="formControl-g" placeholder="CIN" #cin required>
+      </div>
+
+      <div class="formGroup-g">
+        <input type="number" class="formControl-g" placeholder="RIB" #rib required>
+      </div>
+
+      <div class="formGroup-g">
+        <label for="formControl-g">Active: </label>
+        <input type="checkbox" class="formControl-g" id="etat" placeholder="Etat" #etat required>
+      </div>
+
+      <div class="formGroup-g">
+        <input type="button" class="btn-g" value="S'inscrire"
+               (click)="signUp(userName.value, userPwd.value, email.value, cin.value, rib.value, etat.value)">
       </div>
 
       <div class="formGroup-g">

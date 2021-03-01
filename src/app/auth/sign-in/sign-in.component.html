@@ -4,16 +4,16 @@
     <div class="authBlock-g">
       <h3>S'identifier</h3>
       <div class="formGroup-mine-g">
-        <input type="text" class="formControl-g" placeholder="Email" #email required>
+        <input type="text" class="formControl-g" placeholder="Username" #username required>
       </div>
 
       <div class="formGroup-g">
-        <input type="password" class="formControl-g" placeholder="Mot De Passe" #userPassword required>
+        <input type="password" class="formControl-g" placeholder="Mot De Passe" #password required>
       </div>
 
       <!-- Call SignIn Api from AuthService -->
       <div class="formGroup-g">
-        <input type="button" class="btn-g" value="S'identifier">
+        <input type="button" class="btn-g" value="S'identifier" (click)="signIn(username.value, password.value)">
       </div>
     </div>
 
