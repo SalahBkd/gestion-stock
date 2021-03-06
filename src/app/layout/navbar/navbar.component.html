@@ -1,14 +1,14 @@
 <header>
   <nav>
     <h1 class="logo" routerLink="/home">GestionStock</h1>
-    <!--<ul >
+    <ul *ngIf="isLoggedIn()">
       <li><a routerLink="/dashboard">Dashboard</a></li>
-      <li><a>Se déconnecter</a></li>
-    </ul>-->
-    <ul >
+      <li><a routerLink="/profile">{{getUsername()}}</a></li>
+      <li><a (click)="authService.logout()">Se déconnecter</a></li>
+    </ul>
+    <ul *ngIf="!isLoggedIn()">
       <li><a routerLink="/sign-in">S'identifier</a></li>
       <li><a routerLink="/register-user">S'inscrire</a></li>
-      <li><a (click)="authService.logout()">Logout</a></li>
     </ul>
   </nav>
 </header>

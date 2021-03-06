@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpRequest} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
-import {catchError} from "rxjs/operators";
+import {catchError, map} from "rxjs/operators";
 import {User} from "./User";
 import {Router} from "@angular/router";
 
@@ -29,6 +29,7 @@ export class AuthServiceService {
 
   logout() {
     localStorage.removeItem(this.storageKey);
+    localStorage.removeItem("currentUser");
     this.router.navigate(['sign-in']);
 
   }

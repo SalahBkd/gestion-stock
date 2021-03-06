@@ -14,7 +14,12 @@ import {ChartsModule} from "ng2-charts";
 import { SignInComponent } from './auth/sign-in/sign-in.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {AuthServiceService} from "./shared/auth-service.service";
+import {AuthServiceService} from "./shared/services/auth-service.service";
+import { ProduitsComponent } from './dashboard/produits/produits.component';
+import { FournisseursComponent } from './dashboard/fournisseurs/fournisseurs.component';
+import { ClientsComponent } from './dashboard/clients/clients.component';
+import { CommandesComponent } from './dashboard/commandes/commandes.component';
+import { ProfileComponent } from './auth/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +31,11 @@ import {AuthServiceService} from "./shared/auth-service.service";
     SignInComponent,
     SignUpComponent,
     DashboardComponent,
+    ProduitsComponent,
+    FournisseursComponent,
+    ClientsComponent,
+    CommandesComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,32 @@
+.dash-container {
+  display: flex;
+}
+
+.dash-sidebar {
+  display: flex;
+  flex-direction: column;
+  max-width: 20vw;
+  background-color: #d47c6a;
+  margin-top: 4rem;
+  justify-content: space-around;
+}
+
+.dash-sidebar button {
+  margin: 3rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 1rem;
+  border-style: none;
+  border: 1px solid black;
+}
+.dash-sidebar-stats {
+  width: 70rem;
+  height: 70rem;
+  margin-top: 4rem;
+}
+
+.dash-infos {
+  margin-top: 4rem;
+  min-width: 20vh;
+  padding-left: 0;
+}

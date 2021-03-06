@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthServiceService} from "../../shared/auth-service.service";
-import {User} from "../../shared/User";
+import {AuthServiceService} from "../../shared/services/auth-service.service";
+import {User} from "../../shared/services/User";
 import { Router } from "@angular/router";
 
 @Component({
@@ -18,6 +18,7 @@ export class SignUpComponent implements OnInit {
 
   signUp(username: string, password: string, email: string, cin: string, rib: string, etat: string) {
     this.user = {
+      idUser: null,
       username: username,
       password: password,
       email: email,

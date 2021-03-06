@@ -1,2 +1,42 @@
-<h2>Dashboard</h2>
-<button (click)="accessHome()">Access Home With JWT Token</button>
+<div class="dash-container">
+  <div class="dash-sidebar">
+    <button routerLink="/produits">Gérer Produits</button>
+    <button routerLink="/fournisseurs">Gérer Fournisseurs</button>
+    <button routerLink="/clients">Gérer Clients</button>
+    <button routerLink="/commandes">Gérer Commandes</button>
+    <button>Importer / Exporter</button>
+  </div>
+
+  <div class="dash-sidebar-stats">
+    <div>
+      <div>
+        <div class="chart">
+          <canvas baseChart
+                  [data]="pieChartData"
+                  [labels]="pieChartLabels"
+                  [chartType]="pieChartType"
+                  [options]="pieChartOptions"
+                  [colors]="pieChartColors"
+                  [legend]="pieChartLegend">
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dash-infos">
+      <p><span style="font-weight: bold">Nombre de Produits: </span>{{produits.length}}</p>
+      <hr>
+      <br>
+      <p><span style="font-weight: bold">Nombre de Commandes: </span>{{commandes.length}}</p>
+      <hr>
+      <br>
+      <p><span style="font-weight: bold">Nombre de Clients: </span>{{clients.length}}</p>
+      <hr>
+      <br>
+      <p><span style="font-weight: bold">Nombre de Fournisseurs: </span>{{fournisseurs.length}}</p>
+  </div>
+
+</div>
+
+

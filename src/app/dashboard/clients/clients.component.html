@@ -1,0 +1,84 @@
+<div class="prods-container">
+  <button class="btn-ajouter" (click)="handleAddProduits(form.value)">Ajouter</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cin</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Prenom</th>
+      <th scope="col">Rib</th>
+      <th scope="col">Reponsable</th>
+      <th></th>
+      <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let client of clients">
+      <tr>
+        <th scope="row">{{client.idClient}}</th>
+        <td>{{client.cin}}</td>
+        <td>{{client.nom}}</td>
+        <td>{{client.prenom}}</td>
+        <td>{{client.rib}}</td>
+        <td>{{client.responsable.username}}</td>
+        <td (click)="handleUpdateProduit(client)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.363 8.464l1.433 1.431-12.67 12.669-7.125 1.436 1.439-7.127 12.665-12.668 1.431 1.431-12.255 12.224-.726 3.584 3.584-.723 12.224-12.257zm-.056-8.464l-2.815 2.817 5.691 5.692 2.817-2.821-5.693-5.688zm-12.318 18.718l11.313-11.316-.705-.707-11.313 11.314.705.709z"/></svg>
+        </td>
+        <td (click)="handleDeleteProduit(client.idClient)">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.197 2.837l.867.867-8.21 8.291 8.308 8.202-.866.867-8.292-8.21-8.23 8.311-.84-.84 8.213-8.32-8.312-8.231.84-.84 8.319 8.212 8.203-8.309zm-.009-2.837l-8.212 8.318-8.31-8.204-3.666 3.667 8.321 8.24-8.207 8.313 3.667 3.666 8.237-8.318 8.285 8.204 3.697-3.698-8.315-8.209 8.201-8.282-3.698-3.697z"/>
+          </svg>
+        </td>
+      </tr>
+      <div class="popup-wrapper" *ngIf="showDeleteConfirmation">
+        <div class="popup">
+          <div class="popup-close" (click)="toggleDeletePopup()">x</div>
+          <div class="popup-content">
+            <p>Confirmer la suppression du produit</p>
+            <button (click)="handleDeleteConfirmation(client.idClient)">Confirmer</button>
+            <button (click)="toggleDeletePopup()">Annuler</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    </tbody>
+  </table>
+
+
+</div>
+
+<div class="popup-wrapper" *ngIf="showAddFormPopup">
+  <div class="popup">
+    <div class="popup-close" (click)="toggleAddIcon()">x</div>
+    <div class="popup-content">
+      <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+        <div class="form-valeur">
+          <label for="cin" class="form-label">Cin: </label>
+          <input type="text" name="cin" id="cin" formControlName="cin">
+
+          <label for="nom" class="form-label">Nom: </label>
+          <input type="text" name="nom" id="nom" formControlName="nom">
+
+          <label for="prenom" class="form-label">Prenom: </label>
+          <input type="text" name="prenom" id="prenom" formControlName="prenom">
+
+          <label for="rib" class="form-label">Rib: </label>
+          <input type="number" name="rib" id="rib" formControlName="rib">
+
+          <label for="responsable" class="form-label">Responsable: </label>
+          <select name="responsable" id="responsable" formControlName="responsable">
+            <option *ngFor="let responsable of responsables" value="{{responsable | json}}">{{responsable.username}}</option>
+          </select>
+
+        </div>
+
+        <button *ngIf="!isUpdate" class="form-add" [disabled]="!form.valid">Ajouter</button>
+        <button *ngIf="isUpdate" class="form-add" [disabled]="!form.valid">Modifier</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
